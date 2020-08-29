@@ -104,7 +104,7 @@ describe("Proyecto base", () => {
   describe("CRUD Heroes", () => {
     it("Search heroes", () => {
       let { heroDetail } = getPageElts();
-      browser.get("http://localhost:3000/detail/12").then(() => {
+      browser.get("http://localhost:4200/detail/12").then(() => {
         let heroName = heroDetail.element(by.tagName("h2"));
 
         heroName
@@ -114,7 +114,7 @@ describe("Proyecto base", () => {
     });
 
     it("Delete heroes", () => {
-      browser.get("http://localhost:3000/heroes").then(() => {
+      browser.get("http://localhost:4200/heroes").then(() => {
         let { allHeroes } = getPageElts();
         let heroEl = allHeroes.first();
         heroEl
@@ -187,7 +187,7 @@ describe("Proyecto base", () => {
 
   describe("Navigation", () => {
     it("To hero from dashboard", () => {
-      browser.get("http://localhost:3000/dashboard").then(() => {
+      browser.get("http://localhost:4200/dashboard").then(() => {
         let { appDashboard, heroDetail } = getPageElts();
         let topElement = appDashboard.all(by.css("div")).first();
         let link = topElement.all(by.css("a")).first();
@@ -211,7 +211,7 @@ describe("Proyecto base", () => {
     });
 
     it("To hero from hero list", () => {
-      browser.get("http://localhost:3000/heroes").then(() => {
+      browser.get("http://localhost:4200/heroes").then(() => {
         let { allHeroes, heroDetail } = getPageElts();
 
         allHeroes
@@ -240,7 +240,7 @@ describe("Proyecto base", () => {
     });
 
     it("To hero from search bar", () => {
-      browser.get("http://localhost:3000/dashboard").then(() => {
+      browser.get("http://localhost:4200/dashboard").then(() => {
         let { searchBox, searchResults, heroDetail } = getPageElts();
 
         searchBox.sendKeys("Magneta").then(() => {
